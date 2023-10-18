@@ -33,7 +33,7 @@ Follow these steps to set up the environment and run the application:
 Clone the repository that contains your Node.js application and the Docker configuration files.
 
 ```bash
-git clone https://github.com/rakeshreddy4741/student-course-enroll.git
+sudo git clone https://github.com/rakeshreddy4741/student-course-enroll.git
 cd student-course-enroll
 ```
 
@@ -52,7 +52,7 @@ In this file, you have three services:
 Use the following commands to build and run your containers:
 
 ```bash
-docker-compose up --build
+sudo docker-compose up --build
 ```
 
 This command will build the images, start the containers, and map the necessary ports. You will have your Node.js application running at port 6070, PostgreSQL running at port 8990, and pgAdmin running at port 3434.
