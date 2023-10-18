@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Enrollment System</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-bottom: 300px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin: 20px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Student Enrollment System</h1>
+
+    <!-- Create Student -->
+    <form id="create-student-form">
+        <h2>Create Student</h2>
+        <input type="hidden" id="student-id">
+        <label for="student-name">Student Name:</label>
+        <input type="text" id="student-name" required>
+        <button type="button" onclick="formValidation('student-name',createStudent);" id="createStudentBtn">Create Student</button>
+        <button type="button" onclick="formValidation('student-name',updateStudent)" id="updateStudentBtn" style="display: none">Update Student</button>
+        <br>
+        <div id="student-name-success" class="alert" style="display: none; color: green">Student Created</div>
+        <div id="student-name-error" class="alert" style="display: block; color: red;" ></div>
+    </form>
+
+    <!-- List of Students -->
+    <h2>List of Students</h2>
+    <div id="student-list-alerts" style="color: green"></div>
+    <div id="student-list">
+        <ul>
+            <li>Student 1 <button class="delete-student">Delete</button></li>
+            <li>Student 2 <button class="delete-student">Delete</button></li>
+            <li>Student 3 <button class="delete-student">Delete</button></li>
+        </ul>
+    </div>
+
+    <!-- Create Course -->
+
+    <form id="create-course-form">
+        <h2>Create Course</h2>
+        <label for="course-title">Course Title:</label>
+        <input type="hidden" id="course-id">
+        <input type="text" id="course-title" required>
+        <button type="button" onclick="formValidation('course-title',createCourse);"  id="createCourseBtn">Create Course</button>
+        <button type="button" onclick="formValidation('course-title',updateCourse);"  id="updateCourseBtn" style="display: none">Update Course</button>
+        <br>
+        <div id="course-title-success" style="display: none; color:green">Course Created</div>
+        <div id="course-title-error" style="display: block; color: red"></div>
+    </form>
+
+    <!-- List of Courses -->
+    <h2>List of Courses</h2>
+    <div id="course-list-alerts" style="color: green"></div>
+    <div id="course-list">
+
+        <ul>
+            <li>Course A <button class="delete-course">Delete</button></li>
+            <li>Course B <button class="delete-course">Delete</button></li>
+            <li>Course C <button class="delete-course">Delete</button></li>
+        </ul>
+    </div>
+
+    <!-- Enrollment Form -->
+    <form id="enrollment-form">
+        <h2>Enroll Student in Course</h2>
+        <label for="students-dropdown">Select a Student:</label>
+        <select id="students-dropdown" required>
+            <option value="0">Select Student</option>
+        </select>
+
+        <label for="courses-dropdown">Select a Course:</label>
+        <select id="courses-dropdown" required>
+            <option value="0">Select Course</option>
+        </select>
+        <button type="button" onclick="Enroll();">Enroll</button>
+        <br>
+        <div id="enrollment-success" style="display: none">Course Enrolled For student</div>
+        <div id="enrollment-error" style="display: block"></div>
+
+    </form>
+
+    <!-- Retrieve Students in a Course -->
+    <div id="students-in-course">
+        <h2>Students in a Course</h2>
+        <label for="selected-course">Select a Course:</label>
+        <select id="selected-course">
+            <option value="0">Select Course</option>
+        </select>
+        <ul id="student-list-in-course">
+        </ul>
+    </div>
+
+
+    <script src="/script/api.js"></script>
+</div>
+</body>
+</html>
