@@ -6,17 +6,6 @@ document.getElementById("selected-course").addEventListener('click',()=>{
     getEnrolled();
 })
 
-function hideDivAfter5Seconds(divId) {
-    let element = document.getElementById(divId);
-
-    if (element) {
-        setTimeout(function() {
-            element.style.display = 'none';
-        }, 5000); // 5000 milliseconds = 5 seconds
-    }
-}
-
-
 
 function formValidation(field,functionName){
 
