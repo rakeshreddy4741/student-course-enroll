@@ -1,15 +1,28 @@
-# student-course-enroll
+# Student-Course-Enroll
 
-
-This readme provides information on how to set up and run a Node.js application in a Docker container with PostgreSQL and pgAdmin. This configuration allows you to easily develop and run a student enrollment system. 
+This repository provides a comprehensive guide on setting up and running a Node.js application in a Docker container with PostgreSQL and pgAdmin. This configuration allows for the development and execution of a student enrollment system. The project features include students and course CRUD operations and the ability for students to enroll in courses. You can also retrieve a list of students by course.
 
 ## Prerequisites
 
-Before you begin, ensure you have the following software installed on your system:
+Before you begin, make sure you have the following software installed on your system:
 
 - [Docker](https://www.docker.com/get-started)
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
+
+- **Docker Compose:** If you don't have Docker Compose installed, follow the steps below to install it:
+
+  - **Linux (Ubuntu 22.04):**
+
+    For Ubuntu 22.04, you can follow this detailed tutorial on DigitalOcean to install and use Docker Compose: [How To Install and Use Docker Compose on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+
+  - **macOS:**
+
+    Docker Compose is typically included with Docker Desktop on macOS. You don't need to install it separately.
+
+  - **Windows:**
+
+    Docker Compose is included with Docker Desktop on Windows. If you're using Docker Desktop for Windows, you should already have Docker Compose installed.
 
 ## Getting Started
 
@@ -20,13 +33,13 @@ Follow these steps to set up the environment and run the application:
 Clone the repository that contains your Node.js application and the Docker configuration files.
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/rakeshreddy4741/student-course-enroll.git
+cd student-course-enroll
 ```
 
 ### 2. Docker Compose Configuration
 
-A `docker-compose.yml` file is provided to manage your application, PostgreSQL, and pgAdmin containers. Ensure that your `docker-compose.yml` file is correctly configured. 
+A `docker-compose.yml` file is provided to manage your application, PostgreSQL, and pgAdmin containers. Ensure that your `docker-compose.yml` file is correctly configured.
 
 In this file, you have three services:
 
@@ -82,3 +95,21 @@ Here are some useful Docker commands for managing your containers:
 If you need to make additional configurations, please refer to the `Dockerfile` and `docker-compose.yml` for your application and PostgreSQL container.
 
 That's it! You now have a Dockerized Node.js application with a PostgreSQL database and pgAdmin for easy development and management of your student enrollment system. Enjoy developing your application!
+
+---
+
+## Project Features
+
+### 1. Students and Course CRUD Operations
+
+This project enables you to perform Create, Read, Update, and Delete (CRUD) operations for both students and courses. You can add, view, modify, and delete student and course records through the provided application.
+
+### 2. Student Enrollment
+
+Students can enroll in courses, allowing for a clear record of which students are taking which courses. This feature provides a streamlined way to manage student enrollment and course assignments.
+
+### 3. Get Students List by Course
+
+You have the ability to retrieve a list of students who are enrolled in a specific course. This feature is particularly useful for tracking the student composition of each course.
+
+Enjoy using this student-course enrollment system, and feel free to explore and enhance its functionality as needed!
